@@ -19,6 +19,8 @@ Think of MCP as the **USB-C of AI integrations**: instead of building and mainta
 MCP follows a client-host-server architecture where communication occurs using standardized JSON-RPC 2.0 messages over transports like **stdio** (standard I/O) or **SSE** (Server-Sent Events over HTTP).
 
 
+
+
 ```
 
 ┌─────────────────────────────────────────────────────────────┐
@@ -48,6 +50,8 @@ MCP follows a client-host-server architecture where communication occurs using s
 └─────────────────────────┘
 
 ```
+
+
 
 ### Core Primitives
 * **Host:** The container application initiating the workflow (e.g., n8n, Claude Desktop).
