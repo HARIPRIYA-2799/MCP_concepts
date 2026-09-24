@@ -20,39 +20,6 @@ MCP follows a client-host-server architecture where communication occurs using s
 
 
 
-
-```
-
-┌─────────────────────────────────────────────────────────────┐
-│                         MCP Host                            │
-│  (e.g., Claude Desktop, Cursor, n8n, Custom App)             │
-│                                                             │
-│   ┌───────────────┐                  ┌──────────────────┐   │
-│   │   MCP Client  │                  │    LLM Engine    │   │
-│   └───────┬───────┘                  └────────┬─────────┘   │
-└───────────┼───────────────────────────────────┼─────────────┘
-│                                   │
-│ JSON-RPC (stdio / SSE)            │ Prompts &
-│                                   │ Completions
-▼                                   ▼
-┌─────────────────────────┐           ┌───────────────────┐
-│       MCP Server        │           │   Target Model    │
-│  ┌───────────────────┐  │           └───────────────────┘
-│  │ Resources         │  │
-│  │ Prompts           │  │
-│  │ Tools             │  │
-│  └─────────┬─────────┘  │
-└────────────┼────────────┘
-│ Native APIs / DB Queries
-▼
-┌─────────────────────────┐
-│ Local Files, DBs, APIs  │
-└─────────────────────────┘
-
-```
-
-
-
 ### Core Primitives
 * **Host:** The container application initiating the workflow (e.g., n8n, Claude Desktop).
 * **Client:** The component inside the host establishing 1:1 connections with servers.
